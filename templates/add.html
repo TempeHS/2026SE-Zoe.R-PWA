@@ -1,4 +1,9 @@
-<form action="/add.html" method="POST" class="box">
+{% extends 'layout.html' %} {% block content %}
+<h1>Join our mailing list</h1>
+{% if is_done %}
+<h2>Thank you for signing up!</h2>
+> {% else %}
+<form action="add.html" method="POST" class="box">
   <div>
     <label class="form-label">Email address</label>
     <input
@@ -12,10 +17,17 @@
   </div>
   <div>
     <label class="form-label">Name</label>
-    <textarea class="form-control" name="name" id="name" rows="1"></textarea>
+    <textarea
+      class="form-control"
+      type="name"
+      name="name"
+      id="name"
+      rows="1"
+    ></textarea>
   </div>
   <br />
   <div>
     <button type="submit" class="btn">Submit</button>
   </div>
 </form>
+{% endif %} {% endblock %}
